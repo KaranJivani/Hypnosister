@@ -61,6 +61,13 @@
     
     //Draw the line
     [path stroke];
+    
+    //Bronze challange 
+    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    
+    CGRect imageRect = CGRectMake(self.bounds.origin.x,self.bounds.origin.y,self.bounds.size.width,self.bounds.size.height);
+    
+    [logoImage drawInRect:imageRect];
 }
 
 

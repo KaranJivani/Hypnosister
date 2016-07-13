@@ -14,6 +14,7 @@
 		A73C63771D35903E00E71EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73C63761D35903E00E71EBC /* Assets.xcassets */; };
 		A73C637A1D35903E00E71EBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A73C63781D35903E00E71EBC /* LaunchScreen.storyboard */; };
 		A73C63831D3592E800E71EBC /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = A73C63821D3592E800E71EBC /* HypnosisView.m */; };
+		A73C63881D3687A800E71EBC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A73C63871D3687A800E71EBC /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A73C637B1D35903E00E71EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73C63811D3592E800E71EBC /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
 		A73C63821D3592E800E71EBC /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisView.m; sourceTree = "<group>"; };
+		A73C63871D3687A800E71EBC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A73C63711D35903E00E71EBC /* ViewController.m */,
 				A73C63731D35903E00E71EBC /* Main.storyboard */,
 				A73C63761D35903E00E71EBC /* Assets.xcassets */,
+				A73C63871D3687A800E71EBC /* logo.png */,
 				A73C63781D35903E00E71EBC /* LaunchScreen.storyboard */,
 				A73C637B1D35903E00E71EBC /* Info.plist */,
 				A73C636A1D35903E00E71EBC /* Supporting Files */,
@@ -141,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73C63881D3687A800E71EBC /* logo.png in Resources */,
 				A73C637A1D35903E00E71EBC /* LaunchScreen.storyboard in Resources */,
 				A73C63771D35903E00E71EBC /* Assets.xcassets in Resources */,
 				A73C63751D35903E00E71EBC /* Main.storyboard in Resources */,
@@ -308,6 +312,7 @@
 				A73C63801D35903E00E71EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
