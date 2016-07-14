@@ -8,6 +8,11 @@
 
 #import "HypnosisView.h"
 
+@interface HypnosisView()
+
+@property(nonatomic,strong) UIColor *circleColor;
+
+@end
 @implementation HypnosisView
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -16,6 +21,7 @@
     //All Hypnosis view start with clear background color
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     return self;
 }
@@ -54,7 +60,7 @@
     }
     
     //configure the drawing color to light gray
-    [[UIColor lightGrayColor]setStroke];
+    [self.circleColor setStroke];
     
     //Configure line width to 10 points
     path.lineWidth = 10;
@@ -62,14 +68,39 @@
     //Draw the line
     [path stroke];
     
-    //Bronze challange 
-    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
-    
-    CGRect imageRect = CGRectMake(self.bounds.origin.x,self.bounds.origin.y,self.bounds.size.width,self.bounds.size.height);
-    
-    [logoImage drawInRect:imageRect];
+//    [self setImageWithName:@"logo.png"];
 }
 
+
+//Bronze challange
+-(void)setImageWithName : (NSString *)imageName {
+    
+    UIImage *logoImage = [UIImage imageNamed:imageName];
+    CGRect imageRect = CGRectMake(self.bounds.origin.x,self.bounds.origin.y,self.bounds.size.width,self.bounds.size.height);
+    [logoImage drawInRect:imageRect];
+
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    NSLog(@"%@ was touched",self);
+    
+    //Get three random numbers between 0 and 1
+    
+    float red = (arc4random() % 100)/100.0;
+    float green = (arc4random() % 100)/100.0;
+    float blue = (arc4random() % 100)/100.0;
+    
+    UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    
+    [self setCircleColor:randomColor];
+
+}
+
+-(void) setCircleColor:(UIColor *)circleColor {
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
+}
 
 
 @end

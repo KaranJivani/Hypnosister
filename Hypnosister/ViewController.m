@@ -22,18 +22,33 @@ HypnosisView *SecondView;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    CGRect firstFrame = [[UIWindow alloc]init].bounds;
+    //Create CGrects for frames
+    CGRect screenRect = [[UIWindow alloc]init].bounds;
+    CGRect bigRect = screenRect;
     
-    firstView = [[HypnosisView alloc]initWithFrame:firstFrame];
-//    firstView.backgroundColor = [UIColor redColor];
+    bigRect.size.width *= 2.0;
+//    bigRect.size.height *= 2.0;
     
-    CGRect secondFrame = CGRectMake(10, 10, 30, 30);
+    //Create screen sized scrollview and add it to a main view
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:screenRect];
+    [self.view addSubview:scrollView];
     
-    SecondView = [[HypnosisView alloc]initWithFrame:secondFrame];
-    SecondView.backgroundColor = [UIColor blueColor];
     
-    [self.view addSubview:firstView];
-//    [self.view addSubview:SecondView];
+    firstView = [[HypnosisView alloc]initWithFrame:screenRect];
+    [scrollView addSubview:firstView];
+    
+    screenRect.origin.x += screenRect.size.width;
+    
+    SecondView = [[HypnosisView alloc]initWithFrame:screenRect];
+//    SecondView.backgroundColor = [UIColor blueColor];
+    [scrollView addSubview:SecondView];
+    
+    //To enable paging in scrollview so it will direct go to page 2,3 and so on but it will not stop in middle of two different page
+    scrollView.pagingEnabled = YES;
+    
+    //Set the content size of scrollview
+    scrollView.contentSize = bigRect.size;
+    
 
 }
 
